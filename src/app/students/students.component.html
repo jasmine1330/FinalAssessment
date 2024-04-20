@@ -1,0 +1,28 @@
+<h2>Students</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Loop through students and display them -->
+    <tr *ngFor="let student of students">
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" (click)="updateStudent(student.id)">Update</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteStudent(student.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-success" (click)="createStudent()">Create New Student</button>
+
+<!-- Form for creating/updating student -->
+<form *ngIf="showForm">
+  <!-- Input fields for student properties -->
+</form>
